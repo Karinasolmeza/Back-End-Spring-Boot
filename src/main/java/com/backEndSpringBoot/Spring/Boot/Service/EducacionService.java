@@ -7,15 +7,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class EducacionService {
+public class EducacionService  {
 
     @Autowired
     EducacionRepository eduRepo;
-    public  List <Educacion> ListarEducacionPorIdPersona(Long idPersona){
-    return eduRepo.findByIdPersona(idPersona);
-   }
+    public List<Educacion> ListarEducacion(){
+    return eduRepo.findAll();
+    }
+  
+    //public  List <Educacion> ListarEducacionPorIdPersona(Long idPersona){
+    //return eduRepo.findByIdPersona(idPersona);
+   //}
+  
     
-    public void eliminarEducacion(Long id){
+    public void borrarEducacion(Long id){
  
     eduRepo.deleteById(id);
 
@@ -25,10 +30,7 @@ public class EducacionService {
      eduRepo.save(educacion);
     }
     
-    //public List<Educacion> crearEducacionPorIdPersona (Long idPersona, Educacion educacion){
-    //    return eduRepo.saveByIdPersona(idPersona, educacion);
-    //}
-    
+ 
     
      public void modificarEducacion (Educacion educacion){
         eduRepo.save(educacion);

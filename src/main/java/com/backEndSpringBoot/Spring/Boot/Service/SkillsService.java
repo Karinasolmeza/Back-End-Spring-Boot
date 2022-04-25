@@ -12,9 +12,13 @@ public class SkillsService {
     @Autowired
     SkillsRepository skillsRepo;
     
-    public List<Skills> listarSkillsPorIdPersona(Long idPersona){
-        return skillsRepo.findByIdPersona(idPersona);
+    
+    public List<Skills> listarSkills(){
+        return skillsRepo.findAll();
     }
+    //public List<Skills> listarSkillsPorIdPersona(Long idPersona){
+      //  return skillsRepo.findByIdPersona(idPersona);
+    //}
     
     public void crearSkills(Skills skills){
         skillsRepo.save(skills);

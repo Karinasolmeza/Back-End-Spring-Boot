@@ -24,12 +24,19 @@ import org.springframework.web.bind.annotation.RestController;
     
          
     
-  @GetMapping("/aboutme/{idPersona}") 
-  @ResponseBody
-   public AboutMe obtenerAboutMe(@PathVariable Long idPersona){
-        return aboutMeService.obtenerAboutMe(idPersona);
-    }
+  //@GetMapping("/aboutme/{idPersona}") 
+  //@ResponseBody
+  // public AboutMe obtenerAboutMe(@PathVariable Long idPersona){
+      //  return aboutMeService.obtenerAboutMe(idPersona);
+   // }
     
+   @GetMapping("/aboutme/{id}")
+   @ResponseBody
+   public AboutMe obtenerAboutMe(@PathVariable Long id){
+  return aboutMeService.obtenerAboutMe(id);
+        
+   }
+
 
     
   @PostMapping("/aboutme")

@@ -14,9 +14,12 @@ public class ExperienciaService {
     @Autowired
     ExperienciaRepository experienciaRepo;
     
-    public List<Experiencia> listarExperienciaPorIdPersona(Long idPersona){
-        return  experienciaRepo.findByIdPersona(idPersona);
+      public List<Experiencia> ListarExperiencias(){
+    return experienciaRepo.findAll();
     }
+    //public List<Experiencia> listarExperienciaPorIdPersona(Long idPersona){
+      //  return  experienciaRepo.findByIdPersona(idPersona);
+    //}
     
     public void crearExperiencia(Experiencia experiencia){
         

@@ -11,10 +11,13 @@ import org.springframework.stereotype.Service;
 public class ProjectsService {
     @Autowired
     ProjectsRepository projectsRepo;
-    
-    public  List<Projects> listarProjectsPorIdPersona(Long idPersona){
-        return projectsRepo.findByIdPersona(idPersona);
+    public  List<Projects> listarProjects(){
+        return projectsRepo.findAll();
     }
+    
+    //public  List<Projects> listarProjectsPorIdPersona(Long idPersona){
+      //  return projectsRepo.findByIdPersona(idPersona);
+    //}
     
     
     public void crearProjects(Projects projects){

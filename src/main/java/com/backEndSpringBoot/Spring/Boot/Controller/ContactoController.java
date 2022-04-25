@@ -20,12 +20,17 @@ public class ContactoController {
     @Autowired
     ContactService contactService;
     
-      
-  @GetMapping("/contact/{idPersona}") 
-  @ResponseBody
-   public Contact obtenerContact(@PathVariable Long idPersona){
-        return contactService.obtenerContact(idPersona);
+    @GetMapping("/contact/{id}")
+    @ResponseBody
+    public Contact obtenerContact(@PathVariable Long id){
+        return contactService.obtenerContact(id);
     }
+      
+ // @GetMapping("/contact/{idPersona}") 
+  //@ResponseBody
+   //public Contact obtenerContact(@PathVariable Long idPersona){
+     //   return contactService.obtenerContact(idPersona);
+    //}
     
     @PostMapping("/contact")
     public void crearContact(@RequestBody Contact contact){

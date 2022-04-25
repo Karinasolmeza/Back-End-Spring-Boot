@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+
 @CrossOrigin(origins = {"http://localhost:4200/"})
 @RestController
 public class EducacionController {
@@ -22,15 +23,21 @@ public class EducacionController {
     EducacionService eduService;
    // int idPersona=1;
   
-    @GetMapping("/educacion/{idPersona}")
+    //*@GetMapping("/educacion/{idPersona}")
+   // @ResponseBody
+    //public List<Educacion> listarEducacionPorIdPersona(@PathVariable Long idPersona){
+      //  return eduService.ListarEducacionPorIdPersona(idPersona);
+    //}
+    @GetMapping("/educacion")
     @ResponseBody
-    public List<Educacion> listarEducacionPorIdPersona(@PathVariable Long idPersona){
-        return eduService.ListarEducacionPorIdPersona(idPersona);
+    public List<Educacion>ListarEducacion(){
+        return eduService.ListarEducacion();
     }
+    
     
   @DeleteMapping("/educacion/{id}")
   public void eliminarEducacion(@PathVariable Long id){
-          eduService.eliminarEducacion(id);
+          eduService.borrarEducacion(id);
           }
   
   @PostMapping("/educacion")
@@ -38,14 +45,8 @@ public class EducacionController {
    eduService.crearEducacion(educacion);
   }
   
-   // @PostMapping("/educacion/{idPersona}")
-   // public List<Educacion> crearEducacion(@PathVariable Long idPersona, @RequestBody Educacion educacion){
-   //  return eduService.crearEducacion(idPersona, educacion);
-   //}
-    
-    
  
-
+ 
    @PutMapping("/educacion/{id}")
    public void modificarEducacion(@RequestBody Educacion educacion){
       eduService.modificarEducacion (educacion);

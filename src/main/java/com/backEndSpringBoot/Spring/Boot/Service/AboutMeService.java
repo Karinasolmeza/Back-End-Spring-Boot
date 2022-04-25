@@ -2,7 +2,6 @@ package com.backEndSpringBoot.Spring.Boot.Service;
 
 import com.backEndSpringBoot.Spring.Boot.Model.AboutMe;
 import com.backEndSpringBoot.Spring.Boot.Repository.AboutMeRepository;
-import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,10 +12,15 @@ public class AboutMeService {
 AboutMeRepository aboutMeRepo;
 
      
-    public AboutMe obtenerAboutMe(Long idPersona) {
-     return aboutMeRepo.findByIdPersona(idPersona);
+   // public AboutMe obtenerAboutMe(Long idPersona) {
+   //  return aboutMeRepo.findByIdPersona(idPersona);
        
+    //}
+
+     public AboutMe obtenerAboutMe(Long id){
+        return aboutMeRepo.findById(id).orElse(null);
     }
+
     
    
     public void crearAboutMe(AboutMe  aboutMe ) {

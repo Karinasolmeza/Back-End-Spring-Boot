@@ -11,10 +11,13 @@ public class ContactService {
     @Autowired
     ContactRepository contactRepo;
     
-      public Contact ObtenerContact(Long idPersona) {
-     return contactRepo.findByIdPersona(idPersona);
-       
+    public Contact obtenerContact(Long id){
+       return contactRepo.findById(id).orElse (null);
     }
+    
+      //public Contact ObtenerContact(Long idPersona) {
+     //return contactRepo.findByIdPersona(idPersona);
+       //}
     
     public void crearContact(Contact contact){
         contactRepo.save(contact);
@@ -26,9 +29,5 @@ public class ContactService {
     
     public void ModificarContact(Contact contact){
         contactRepo.save(contact);
-    }
-
-    public Contact obtenerContact(Long idPersona) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }

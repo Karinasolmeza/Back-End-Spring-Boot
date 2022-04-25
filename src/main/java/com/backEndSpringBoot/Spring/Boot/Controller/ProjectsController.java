@@ -22,11 +22,15 @@ public class ProjectsController {
     @Autowired
     ProjectsService projectsService;
     
-    @GetMapping("/projects/{idPersona}")
+    @GetMapping("/projects")
     @ResponseBody
-    public List<Projects> listarProjectsPorIdPersona(@PathVariable Long idPersona){
-      return projectsService.listarProjectsPorIdPersona(idPersona);
+    public List<Projects> listarProjects(){
+        return projectsService.listarProjects();
     }
+    
+// public List<Projects> listarProjectsPorIdPersona(@PathVariable Long idPersona){
+     // return projectsService.listarProjectsPorIdPersona(idPersona);
+    //}
      @PostMapping("/projects")
      public void crearProjects(@RequestBody Projects projects){
          projectsService.crearProjects(projects);
@@ -36,7 +40,7 @@ public class ProjectsController {
      public void borrarProjects(@PathVariable Long id){
          projectsService.borrarProjects(id);
      }
-     @PutMapping ("/projects")
+     @PutMapping ("/projects/{id}")
      public void modificarProjects(@RequestBody Projects projects){
          projectsService.modificarProjects(projects);
           }

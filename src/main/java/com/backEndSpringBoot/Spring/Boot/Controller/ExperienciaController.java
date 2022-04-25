@@ -22,11 +22,15 @@ public class ExperienciaController {
     ExperienciaService experienciaService;
     
     
-    @GetMapping("/experiencia/{idPersona}")
+    @GetMapping("/experiencia")
     @ResponseBody
-    public List<Experiencia> listarExperienciaPorIdPersona(@PathVariable Long IdPersona){
-        return experienciaService.listarExperienciaPorIdPersona(IdPersona);
+      public List<Experiencia>ListarExperiencias(){
+        return experienciaService.ListarExperiencias();
     }
+    
+   // public List<Experiencia> listarExperienciaPorIdPersona(@PathVariable Long IdPersona){
+     //   return experienciaService.listarExperienciaPorIdPersona(IdPersona);
+    //}
     
     @PostMapping("/experiencia")
     public void crearExperiencia (@RequestBody Experiencia experiencia){
@@ -39,7 +43,7 @@ public class ExperienciaController {
         experienciaService.borrarExperiencia(id);
     }
     
-    @PutMapping ("/experiencia")
+    @PutMapping ("/experiencia/{id}")
     public void modificarExperiencia (@RequestBody Experiencia experiencia){
         experienciaService.modificarExperiencia(experiencia);
 }

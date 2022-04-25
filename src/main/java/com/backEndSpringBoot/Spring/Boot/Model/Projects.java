@@ -19,16 +19,18 @@ public class Projects {
     String name;
     String description;
     String imgProject;
+    String linkProject;
     Long idPersona;
 
     public Projects() {
     }
 
-    public Projects(Long id, String name, String description, String imgProject, Long idPersona) {
+    public Projects(Long id, String name, String description, String imgProject,String linkProject, Long idPersona) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.imgProject = imgProject;
+        this.linkProject=linkProject;
         this.idPersona = idPersona;
     }
     

@@ -21,11 +21,19 @@ public class SkillsController {
     @Autowired
     SkillsService skillsService;
     
-    @GetMapping("/skills/{idPersona}")
+    @GetMapping("/skills")
     @ResponseBody
-    public List<Skills> ListarSkillsPorIdPersona(@PathVariable Long idPersona){
-        return skillsService.listarSkillsPorIdPersona(idPersona);
+    public  List<Skills>listarSkills(){
+        return skillsService.listarSkills();
     }
+    
+    
+    
+    //@GetMapping("/skills/{idPersona}")
+    //@ResponseBody
+    //public List<Skills> ListarSkillsPorIdPersona(@PathVariable Long idPersona){
+      //  return skillsService.listarSkillsPorIdPersona(idPersona);
+    //}
     
     @PostMapping("/skills")
     public  void  crearSkills(@RequestBody Skills skills){
@@ -37,7 +45,7 @@ public class SkillsController {
         skillsService.borrarSkills(id);
     }
     
-    @PutMapping("/skills")
+    @PutMapping("/skills/{id}")
     public void modificarSkills (@RequestBody Skills skills){
         skillsService.modificarSkills(skills);
     }
