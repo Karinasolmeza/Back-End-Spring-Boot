@@ -20,6 +20,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class FooterController {
      @Autowired
     FooterService footerService;
+     
+  
     
     @GetMapping("/footer")
     @ResponseBody
