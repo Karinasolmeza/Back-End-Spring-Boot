@@ -15,10 +15,7 @@ public class ProjectsService {
         return projectsRepo.findAll();
     }
     
-    //public  List<Projects> listarProjectsPorIdPersona(Long idPersona){
-      //  return projectsRepo.findByIdPersona(idPersona);
-    //}
-    
+ 
     
     public void crearProjects(Projects projects){
         projectsRepo.save(projects);
