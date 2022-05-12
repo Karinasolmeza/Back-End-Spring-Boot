@@ -22,17 +22,19 @@ public class Footer {
     String linkInstagram;
     String linkTwitter;
     String linkEdin;
+    String linkGit;
     Long idPersona;
 
     public Footer() {
     }
 
-    public Footer(Long Id, String linkFacebook, String linkInstagram, String linkTwitter, String linkEdin, Long idPersona) {
+    public Footer(Long Id, String linkFacebook, String linkInstagram, String linkTwitter, String linkEdin, String linkGit, Long idPersona) {
         this.Id = Id;
         this.linkFacebook = linkFacebook;
         this.linkInstagram = linkInstagram;
         this.linkTwitter = linkTwitter;
         this.linkEdin = linkEdin;
+        this.linkGit = linkGit;
         this.idPersona = idPersona;
     }
 
