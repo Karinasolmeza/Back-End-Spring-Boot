@@ -37,8 +37,7 @@ public class Footer {
         this.idPersona = idPersona;
     }
 
-    public Footer() {
-    }
+  
 
   
 
