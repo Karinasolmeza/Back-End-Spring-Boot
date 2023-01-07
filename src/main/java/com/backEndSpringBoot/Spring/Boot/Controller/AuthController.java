@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 
-@CrossOrigin (origins = {"https://portfolio-karinameza.web.app/"})
+@CrossOrigin (origins = {"https://portfolio-karinameza.web.app/"}, allowedHeaders = "*")
 @RestController
 public class AuthController {
     
