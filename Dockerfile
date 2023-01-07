@@ -1,8 +1,9 @@
-FROM openjdk:8
+
+FROM amazoncorretto:8-alpine-jdk
 
 
 
-COPY /target/Spring-Boot-0.0.1-SNAPSHOT.jar demo.jar
+COPY target/Spring-Boot-0.0.1-SNAPSHOT.jar Spring-Boot-0.0.1-SNAPSHOT.jar
 
-EXPOSE 8080
-ENTRYPOINT ["java","-jar","demo.jar"]
+
+ENTRYPOINT ["java","-jar","/Spring-Boot-0.0.1-SNAPSHOT.jar"]
